@@ -1,0 +1,94 @@
+{
+    "customers": [
+        {
+            "name": {
+                "title": "Mr.",
+                "first": "Joe",
+                "last": "Wade"
+            },
+            "country": "USA",
+            "picture": "https://randomuser.me/api/portraits/men/5.jpg"
+        },
+        {
+            "name": {
+                "title": "Mr.",
+                "first": "Shawn",
+                "last": "Gray"
+            },
+            "country": "UK",
+            "picture": "https://randomuser.me/api/portraits/men/89.jpg"
+        },
+        {
+            "name": {
+                "title": "Mr.",
+                "first": "Darren",
+                "last": "Knight"
+            },
+            "country": "USA",
+            "picture": "https://randomuser.me/api/portraits/men/16.jpg"
+        },
+        {
+            "name": {
+                "title": "Mw.",
+                "first": "Priscilla",
+                "last": "Morales"
+            },
+            "country": "Brazilië",
+            "picture": "https://randomuser.me/api/portraits/women/8.jpg"
+        },
+        {
+            "name": {
+                "title": "Mw.",
+                "first": "Janice",
+                "last": "Duncan"
+            },
+            "country": "USA",
+            "picture": "https://randomuser.me/api/portraits/women/96.jpg"
+        },
+        {
+            "name":{
+                "title":"Mr.",
+                "first":"Donald",
+                "last":"Medina"
+            },
+            "country":"China",
+            "picture":"https://randomuser.me/api/portraits/men/90.jpg"
+        },
+        {
+            "name":{
+                "title":"Mr.",
+                "first":"Vincent",
+                "last":"Gilbert"
+            },
+            "country":"België",
+            "picture":"https://randomuser.me/api/portraits/men/8.jpg"
+        },
+        {
+            "name":{
+                "title":"Mr.",
+                "first":"Heather",
+                "last":"Rodriquez"
+            },
+            "country":"Mexico",
+            "picture":"https://randomuser.me/api/portraits/women/76.jpg"
+        },
+        {
+            "name":{
+                "title":"Mr.",
+                "first":"Milton",
+                "last":"Butler"
+            },
+            "country":"UK",
+            "picture":"https://randomuser.me/api/portraits/men/24.jpg"
+        },
+        {
+            "name":{
+                "title":"Mw.",
+                "first":"Marie",
+                "last":"Hoffman"
+            },
+            "country":"Duitsland",
+            "picture":"https://randomuser.me/api/portraits/women/81.jpg"
+        }
+    ]
+}

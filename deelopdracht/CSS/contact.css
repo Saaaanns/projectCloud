@@ -1,0 +1,241 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  display: grid;
+  grid-template-areas:
+    "nav      "
+    "header   "
+    "form     "
+    "section  "
+    "footer   ";
+}
+nav {
+  ul {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 20px;
+    color: white;
+    font-size: 18px;
+    background-color: #274c77;
+  }
+}
+header {
+  grid-area: header;
+  h1 {
+    font-size: 36px;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    background-color: #6096ba;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+form {
+  grid-area: form;
+  input {
+    border: 1px black solid;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  select {
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+  }
+  option {
+    border: 1px solid black;
+    padding: 10px;
+  }
+  fieldset {
+    position: relative;
+    left: 655px;
+    top: 30px;
+    padding-bottom: 5px;
+  }
+  button {
+    border: 2px black solid;
+    font-size: 18px;
+    font-weight: bolder;
+    color: white;
+    background-color: #274c77;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-self: center;
+    position: relative;
+    left: 661px;
+    top: 95px;
+  }
+}
+
+section {
+  grid-area: section;
+  text-align: center;
+  background-color: #6096ba;
+  position: relative;
+  top: 100px;
+  h2 {
+    font-size: 32px;
+    font-weight: bolder;
+    padding: 5px;
+  }
+  p {
+    font-size: 16px;
+  }
+  #map {
+    height: 20vh;
+    width: 500px;
+    margin: auto;
+    width: 50%;
+  }
+}
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-around;
+  clear: both;
+  border: 1px solid black;
+  background-color: #274c77;
+  color: white;
+  padding: 84px;
+  position: relative;
+  top: 100px;
+  #merk {
+    order: 1;
+  }
+  #shimano {
+    order: 2;
+  }
+  #rockshox {
+    order: 3;
+  }
+}
+@media (max-width: 375px) {
+  nav ul {
+    flex-direction: column;
+  }
+  footer {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  form {
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+
+    fieldset {
+      position: relative;
+      left: 0px;
+      top: 30px;
+      padding-bottom: 5px;
+    }
+    button {
+      border: 2px black solid;
+      font-size: 18px;
+      font-weight: bolder;
+      color: white;
+      background-color: #274c77;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      align-self: center;
+      position: relative;
+      left: 0px;
+      top: 95px;
+    }
+  }
+  section {
+    grid-area: section;
+    text-align: center;
+    background-color: #6096ba;
+    position: relative;
+    top: 100px;
+    h2 {
+      font-size: 32px;
+      font-weight: bolder;
+      padding: 5px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  form {
+    fieldset {
+      position: relative;
+      left: 270px;
+      top: 30px;
+      padding-bottom: 5px;
+    }
+    button {
+      border: 2px black solid;
+      font-size: 18px;
+      font-weight: bolder;
+      color: white;
+      background-color: #274c77;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      align-self: center;
+      position: relative;
+      top: 75px;
+      left: 285px;
+    }
+  }
+}
+
+#shopping-cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: #f9f9f9;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%); /* Verberg buiten beeld */
+  transition: transform 0.3s ease-in-out;
+}
+
+#shopping-cart h2 {
+  margin-top: 0;
+}
+
+#shopping-cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+#shopping-cart.hidden {
+  transform: translateX(100%);
+}
+
+#shopping-cart.visible {
+  transform: translateX(0);
+}
+
+#clear-cart {
+  background: #6096ba;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#clear-cart:hover {
+  background: #274c77;
+}

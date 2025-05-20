@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/reset.css" />
+    <link rel="stylesheet" href="CSS/product.css" />
+    <script src="JS/product.js" defer></script>
+    <script src="JS/script.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Producten</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li id="winkelmand-trigger"><a href="#">Winkelmandje</a></li>
+      </ul>
+    </nav>
+    <aside id="shopping-cart" class="hidden">
+      <h2>Winkelmandje</h2>
+      <ul id="cart-items"></ul>
+      <button id="clear-cart">Winkelmandje legen</button>
+    </aside>
+    <header>
+      <h1>ProCyclingParts</h1>
+    </header>
+    <main>
+      <section>
+        <img src="afbeeldingen/Tiagra.jpg" alt="Tiagra" width="750px" />
+        <p id="materiaal">Shimano Tiagra 4700 Groupset 2x10-speed</p>
+        <p id="uitleg">
+          Tiagra is Shimano's instapmodel voor racefietsen en biedt degelijke
+          prestaties voor de prijs. De Tiagra groepset is ideaal voor
+          recreatieve fietsers en beginners.
+        </p>
+        <p id="prijs">€400,00</p>
+        <p id="voorraad">Op voorraad</p>
+        <p id="levertijd">Levertijd: 2 tot 5 werkdagen</p>
+        <a href="#"><button id="add-to-cart">In het winkelmandje</button></a>
+        <span class="wishlist" title="Voeg toe aan wishlist">❤️</span>
+        <form id="reviewForm">
+          <label for="name">Jouw Naam:</label><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Typ je naam hier..."
+            required
+          /><br /><br />
+
+          <label for="review">Jouw Review:</label><br />
+          <textarea
+            id="review"
+            name="review"
+            rows="5"
+            cols="30"
+            placeholder="Schrijf je review hier..."
+            required
+          ></textarea
+          ><br /><br />
+
+          <button type="submit" id="submitReview">Verstuur Review</button>
+        </form>
+        <h2>Ingediende Reviews:</h2>
+        <div id="reviews"></div>
+      </section>
+    </main>
+    <footer>
+      <p id="merk">Onze merken:</p>
+      <img
+        id="shimano"
+        src="afbeeldingen/shimano.jpg"
+        alt="Shimano logo"
+        width="100px"
+      />
+      <img
+        id="rockshox"
+        src="afbeeldingen/rockshox-logo.png"
+        alt="Rockshox logo"
+        width="180px"
+      />
+    </footer>
+  </body>
+</html>
