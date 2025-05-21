@@ -2,6 +2,8 @@ services:
   project:
     image: cloudsystemen
     build: ./Milestone2
+    ports:
+      - "3000:3000"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.project.rule=Host(`cloudsystemen.de-moor.online`)"
