@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= driver.name %></title>
+    <link rel="stylesheet" href="/css/drivers.css">
+</head>
+<body>
+    <%- include("partials/nav") %>
+    <section class="main-content">
+        <div class="driver-detail">
+            <img src="<%= driver.image %>" alt="<%= driver.name %>" class="driver-image">
+            <h1><%= driver.name %></h1>
+            <p><strong>Birthdate:</strong> <%= driver.birthdate %></p>
+            <p><strong>Category:</strong> <%= driver.category %></p>
+            <p><strong>Active:</strong> <span class="status <%= driver.active ? 'active' : 'inactive' %>">
+                <%= driver.active ? '● Active' : '○ Inactive' %>
+            </span></p>
+            <p><strong>Hobbies:</strong> <%= driver.hobbies.join(", ") %></p>
+
+            <% if (team) { %>
+                <h2>Team</h2>
+                <p><strong>Name:</strong> <%= team.name %></p>
+                <p><strong>Founded:</strong> <%= team.founded %></p>
+                <p><strong>Active:</strong> <%= team.active ? 'Yes' : 'No' %></p>
+                <img src="<%= team.image %>" alt="<%= team.name %>" class="team-image">
+            <% } else { %>
+                <p>This driver is not associated with any team.</p>
+            <% } %>
+
+
+            <a href="/drivers" class="back-link">Back to Drivers</a>
+        </div>
+    </section>
+</body>
+</html>
