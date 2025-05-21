@@ -1,12 +1,12 @@
 services:  
   project:
-    image: my/project
+    image: cloudsystemen
     build: ./Milestone2
     volumes:  
       - "../.env:/usr/src/app/.env"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.project.rule=Host(project.maesen.online)"
+      - "traefik.http.routers.project.rule=Host(cloudsystemen.de-moor.online)"
       - "traefik.http.routers.project.entrypoints=websecure"
       - "traefik.http.routers.project.tls.certresolver=projectresolver"
       - "../.env:/usr/src/app/.env"
@@ -19,7 +19,7 @@ services:
       - "--providers.docker.exposedbydefault=false"
       - "--entryPoints.websecure.address=:443"
       - "--certificatesresolvers.projectresolver.acme.tlschallenge=true"
-      - "--certificatesresolvers.projectresolver.acme.email=tiwaztyr1802@gmail.com"
+      - "--certificatesresolvers.projectresolver.acme.email=sanderdemoor@outlook.com"
       - "--certificatesresolvers.projectresolver.acme.storage=/letsencrypt/acme.json"
     ports:
       - "443:443"
