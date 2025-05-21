@@ -4,9 +4,10 @@ services:
     build: ./Milestone2
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.project.rule=Host(cloudsystemen.de-moor.online)"
+      - "traefik.http.routers.project.rule=Host(`cloudsystemen.de-moor.online`)"
       - "traefik.http.routers.project.entrypoints=websecure"
       - "traefik.http.routers.project.tls.certresolver=projectresolver"
+      - "traefik.http.services.project.loadbalancer.server.port=3000"
   traefik:
     image: "traefik:v3.3"
     container_name: "traefik"
