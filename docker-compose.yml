@@ -2,14 +2,11 @@ services:
   project:
     image: cloudsystemen
     build: ./Milestone2
-    volumes:  
-      - "../.env:/usr/src/app/.env"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.project.rule=Host(cloudsystemen.de-moor.online)"
       - "traefik.http.routers.project.entrypoints=websecure"
       - "traefik.http.routers.project.tls.certresolver=projectresolver"
-      - "../.env:/usr/src/app/.env"
   traefik:
     image: "traefik:v3.3"
     container_name: "traefik"
@@ -26,4 +23,3 @@ services:
       - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "../letsencrypt:/letsencrypt"
