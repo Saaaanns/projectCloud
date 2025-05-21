@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include("partials/nav") %>
+    <section class="main-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Founded</th>
+                    <th>Active</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% teams.forEach(team => { %>
+                    <tr>
+                        <td><%= team.name %></td>
+                        <td><%= team.founded %></td>
+                        <td class="status <%= team.active ? 'active' : 'inactive' %>">
+                            <%= team.active ? '●' : '○' %>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

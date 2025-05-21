@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Update Driver</title>
+</head>
+<body>
+    <%- include("partials/nav") %>
+
+    <section class="main-content">
+        <h1>Update Driver</h1>
+
+        <form action="/drivers/<%= driver.id %>/update" method="POST" class="form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="<%= driver.name %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">Birthdate:</label>
+                <input type="text" id="birthdate" name="birthdate" value="<%= driver.birthdate %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" value="<%= driver.category %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="team_id">Team:</label>
+                <select id="team_id" name="team_id" required>
+                    <% teams.forEach(team => { %>
+                        <option value="<%= team.id %>" <%= team.id === driver.team_id ? "selected" : "" %>><%= team.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="active">Active:</label>
+                <select id="active" name="active">
+                    <option value="true" <%= driver.active ? "selected" : "" %>>Yes</option>
+                    <option value="false" <%= !driver.active ? "selected" : "" %>>No</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-button">Update Driver</button>
+        </form>
+    </section>
+</body>
+</html>

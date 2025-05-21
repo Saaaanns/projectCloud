@@ -1,0 +1,34 @@
+services:
+  project:
+    image: cloudsystemen
+    build: path
+    container_name: project-cloudsystemen-final
+    ports:
+      -"3000:3000"
+    deploy:
+      replicas: 2
+    volumes:
+      - "../../.env:/usr/src/app.env"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.project.rule=Host('demoor.online')"
+      - "traefik.http.routers.project.entrypoints=websecure"
+      - "traefik.http.routers.project.tls.certresolver=projectresolver"
+      - "../../.env:/usr/src/app/.env"
+  traefik:
+    image: "traefik:v3.3"
+    container_name: "traefik"
+    command: 
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entryPoints.websecure.address=:443"
+      - "--certificatesresolvers.projectresolver.acme.tlschallenge=true" 
+      - "--certificatesresolvers.projectresolver.acme.email"
+      - "--certificatesresolvers.projectresolver.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "../../letsencrypt:/letsencrypt"

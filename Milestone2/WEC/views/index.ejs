@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <% if (user) { %>
+        <p><%= user.email %> is logged in.</p>
+        <form action="/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    <% } else { %>
+        <p>You are not logged in.</p>
+    <% } %>
+    <%- include("partials/nav") %>
+    <section class="main-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Birthdate</th>
+                    <th>Category</th>
+                    <th>Active</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% drivers.forEach(driver => { %>
+                    <tr>
+                        <td>
+                            <img src="<%= driver.image %>" alt="Driver">
+                            <%= driver.name %>
+                        </td>
+                        <td><%= driver.birthdate %></td>
+                        <td><%= driver.category %></td>
+                        <td class="status <%= driver.active ? 'active' : 'inactive' %>">
+                            <%= driver.active ? '●' : '○' %>
+                        </td>
+                        <td><a href="/drivers/<%= driver.id %>" class="view-link">View</a></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
