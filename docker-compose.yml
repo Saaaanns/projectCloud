@@ -1,7 +1,7 @@
 services:  
   project:
     image: my/project
-    build: ./project-jonathan-maesen-final
+    build: ./Milestone2
     volumes:  
       - "../.env:/usr/src/app/.env"
     labels:
