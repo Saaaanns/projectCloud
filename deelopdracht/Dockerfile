@@ -1,5 +1,11 @@
-FROM httpd:latest
-WORKDIR /usr/local/apache2/htdocs/
-COPY . /usr/local/apache2/htdocs/
-RUN apt-get update
-EXPOSE 80
+FROM node:latest
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
