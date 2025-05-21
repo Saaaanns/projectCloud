@@ -9,7 +9,12 @@ import mongoDbSession from "connect-mongodb-session";
 
 dotenv.config();
 
-const CONNECTION_STRING: string = process.env.MONGODB_URI || "mongodb+srv://SanderDM:Sander.sofie2@cluster0.pqdardi.mongodb.net/?retryWrites=true&w=majority";
+const CONNECTION_STRING: string | undefined = process.env.MONGODB_URI;
+
+if (!CONNECTION_STRING) {
+  throw new Error("MONGODB_URI is not defined in environment variables");
+}
+
 const client = new MongoClient(CONNECTION_STRING);
 
 const app: Express = express();
